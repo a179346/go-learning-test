@@ -6,11 +6,22 @@ import (
 	"strconv"
 	"strings"
 
-	singleresponsibility "github.com/a179346/go-learning-tests/test/solid/single_responsibility"
+	"github.com/a179346/go-learning-tests/test/solid"
 )
 
+/**
+ * Single Responsibility Principle:
+ *
+ * A class should have only one reason to change
+ */
+
+/**
+ * StudentReporter has 2 reasons to change.
+ * 1. When changing the way we read and parse the student info
+ * 2. When changning the format of the report
+ */
 type StudentReporter struct {
-	student *singleresponsibility.Student
+	student *solid.Student
 }
 
 func (sr *StudentReporter) Read(studentInfo string) error {
@@ -33,7 +44,7 @@ func (sr *StudentReporter) Read(studentInfo string) error {
 		return err
 	}
 
-	sr.student = &singleresponsibility.Student{
+	sr.student = &solid.Student{
 		Name:         name,
 		EnglishScore: englishScore,
 		MathScore:    mathScore,

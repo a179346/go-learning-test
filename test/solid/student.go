@@ -1,4 +1,4 @@
-package singleresponsibility
+package solid
 
 type Student struct {
 	Name         string

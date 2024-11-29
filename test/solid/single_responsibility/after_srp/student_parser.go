@@ -5,12 +5,12 @@ import (
 	"strconv"
 	"strings"
 
-	singleresponsibility "github.com/a179346/go-learning-tests/test/solid/single_responsibility"
+	"github.com/a179346/go-learning-tests/test/solid"
 )
 
 type StudentParser struct{}
 
-func (sp StudentParser) Parse(studentInfo string) (*singleresponsibility.Student, error) {
+func (sp StudentParser) Parse(studentInfo string) (*solid.Student, error) {
 
 	info := strings.Split(studentInfo, ",")
 	if len(info) != 4 {
@@ -31,7 +31,7 @@ func (sp StudentParser) Parse(studentInfo string) (*singleresponsibility.Student
 		return nil, err
 	}
 
-	return &singleresponsibility.Student{
+	return &solid.Student{
 		Name:         name,
 		EnglishScore: englishScore,
 		MathScore:    mathScore,

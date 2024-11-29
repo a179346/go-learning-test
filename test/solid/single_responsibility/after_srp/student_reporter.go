@@ -3,12 +3,12 @@ package after_srp
 import (
 	"fmt"
 
-	singleresponsibility "github.com/a179346/go-learning-tests/test/solid/single_responsibility"
+	"github.com/a179346/go-learning-tests/test/solid"
 )
 
 type StudentReporter struct{}
 
-func (sr StudentReporter) GenerateReport(student singleresponsibility.Student) string {
+func (sr StudentReporter) GenerateReport(student solid.Student) string {
 	return fmt.Sprintf(
 		"Name: %s, English: %v, Math: %v, Science: %v",
 		student.Name,

@@ -3,7 +3,7 @@ package after_srp_test
 import (
 	"testing"
 
-	singleresponsibility "github.com/a179346/go-learning-tests/test/solid/single_responsibility"
+	"github.com/a179346/go-learning-tests/test/solid"
 	"github.com/a179346/go-learning-tests/test/solid/single_responsibility/after_srp"
 )
 
@@ -21,7 +21,7 @@ func TestStudentParser(t *testing.T) {
 			return
 		}
 
-		expectedStudent := &singleresponsibility.Student{
+		expectedStudent := &solid.Student{
 			Name:         "John",
 			EnglishScore: 90,
 			MathScore:    85,
@@ -58,7 +58,7 @@ func TestStudentReporter(t *testing.T) {
 	t.Run("Should return corresponding report", func(t *testing.T) {
 		studentReporter := after_srp.StudentReporter{}
 
-		student := &singleresponsibility.Student{
+		student := &solid.Student{
 			Name:         "John",
 			EnglishScore: 90,
 			MathScore:    85,
